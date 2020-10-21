@@ -2718,8 +2718,8 @@ mjx-container[display="true"] + br {
   }
 }
 body {
-  background-image: url("/images/bg.jpg");
-  background-attachment: top;
+  background: url("/images/bg.jpg");
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
 }
