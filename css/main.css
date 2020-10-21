@@ -2719,16 +2719,19 @@ mjx-container[display="true"] + br {
 }
 body {
   background-image: url("/images/bg.jpg");
+  background-attachment: top;
   background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: top;
-  background-size: 100%;
+  background-size: cover;
 }
 .main-inner {
   background: #fff;
   opacity: 0.9;
 }
 .header-inner {
+  background: #fff;
+  opacity: 0.9;
+}
+.sidebar-inner {
   background: #fff;
   opacity: 0.9;
 }
