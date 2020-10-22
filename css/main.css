@@ -2719,10 +2719,6 @@ mjx-container[display="true"] + br {
 }
 body {
   background-color: #f0f0f0;
-  background-image: url("/images/bg.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-attachment: fixed;
 }
 .main-inner {
   background: #fff;
