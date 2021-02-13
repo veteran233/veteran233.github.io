@@ -235,4 +235,23 @@ x+a_{1} b_{1}+a_{2} b_{2}+\cdots+a_{n} b_{n} & b_{1} & b_{2} & \cdots & b_{n} \\
         <tag>dp</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Codeforces Round 701 - C - Floor and Mod</title>
+    <url>/2021/02/13/cf1485-c/</url>
+    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><a id="more"></a>
+<p><a href="https://codeforces.com/contest/1485/problem/C">https://codeforces.com/contest/1485/problem/C</a></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>由$1\leq a\leq x,1\leq b\leq y,\lfloor\frac{a}{b}\rfloor=a\bmod b$得：<br>$\lfloor\frac{a}{b}\rfloor=a \bmod b=a-\lfloor\frac{a}{b}\rfloor b$<br>$\lfloor\frac{a}{b}\rfloor=\frac{a}{b+1}$<br>由于$\lfloor\frac{a}{b}\rfloor$为整数，所以$b+1$必定整除$a$，即$a \bmod (b+1)=0$<br>令$a=n(b+1) \leq x$，则<br>$\lfloor\frac{a}{b}\rfloor=\lfloor\frac{n(b+1)}{b}\rfloor=\lfloor n+\frac{n}{b}\rfloor=n+\lfloor\frac{n}{b}]$<br>结合上述得：$\lfloor\frac{n}{b}\rfloor=0$<br>由于$n&gt;0$，所以$b&gt;n$，结合b的范围得：</p>
+<ol>
+<li>$b&gt;n$</li>
+<li>$n(b+1) \leq x$</li>
+<li>$1 \leq b \leq y$</li>
+</ol>
+<p>考虑第二个范围对存在的$b$适用，所以左边取最小值，即$n(n+2)\leq x$<br>接着枚举$n$，则$n&lt;b\leq\min(\frac{x}{n}-1,y)$</p>
+<p>$b$的个数为$\min(\frac{x}{n}-1,y)-n$（注意这里没有考虑$n&gt;\min(\frac{x}{n}-1,y)$，可以用一个max解决）</p>
+<h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> endl <span class="meta-string">&#x27;\n&#x27;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lson(x) (x&lt;&lt;1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rson(x) (x&lt;&lt;1|1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) (x&amp;-x)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">IO</span> &#123;</span> _IO() &#123; ios::sync_with_stdio(<span class="number">0</span>); <span class="built_in">cin</span>.tie(<span class="number">0</span>); <span class="built_in">cout</span>.tie(<span class="number">0</span>); &#125; &#125;_io;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll; <span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull; <span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> ld; <span class="keyword">typedef</span> <span class="built_in">pair</span>&lt;ll, ll&gt; pll;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll T;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--)</span><br><span class="line">    &#123;</span><br><span class="line">        ll x, y, ans = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        <span class="keyword">for</span> (ll n = <span class="number">1</span>; n * (n + <span class="number">2</span>) &lt;= x; ++n) ans += max(min(x / n - <span class="number">1</span>, y) - n, <span class="number">0l</span>l);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>cf</tag>
+        <tag>数学</tag>
+      </tags>
+  </entry>
 </search>
