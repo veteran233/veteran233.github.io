@@ -95,10 +95,7 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
 
-  
-  <!--<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>-->
-  <canvas id="i_bg" style="background-image:url(/images/bg.jpg);background-repeat:no-repeat;background-position-x:center;background-position-y:0%;z-index:-2;position:fixed;height:100%;width:100%;background-size:100%"></canvas>
-  
+  <canvas id="i_bg" style="background-image:url(/images/bg.jpg);background-repeat:no-repeat;background-position-x:center;background-position-y:0%;z-index:-2;position:fixed;height:100%;width:100%;background-size:100%;"></canvas>
 
   <div class="headband"></div>
 
@@ -442,6 +439,7 @@
 
   <script>
   window.onscroll = function() {
+    if(document.getElementById("i_bg").height)
     const contentHeight = document.body.scrollHeight - window.innerHeight;
     const scrollPercent = contentHeight > 0 ? Math.min(100 * window.scrollY / contentHeight, 100) : 0;
     document.getElementById("i_bg").style["background-position-y"] = scrollPercent + "%";
