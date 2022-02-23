@@ -490,7 +490,6 @@ C_{n-x}^{gt}A_{gt}^{gt}C_{x-1}^{lt}A_{lt}^{lt}A_{n-1-lt-gt}^{n-1-lt-gt}</script>
 
   <script>
   window.onscroll = function() {
-    if(document.getElementById("i_bg").height)
     const contentHeight = document.body.scrollHeight - window.innerHeight;
     const scrollPercent = contentHeight > 0 ? Math.min(100 * window.scrollY / contentHeight, 100) : 0;
     document.getElementById("i_bg").style["background-position-y"] = scrollPercent + "%";

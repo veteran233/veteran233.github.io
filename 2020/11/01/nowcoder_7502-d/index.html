@@ -525,7 +525,6 @@ x+a_{1} b_{1}+a_{2} b_{2}+\cdots+a_{n} b_{n} & b_{1} & b_{2} & \cdots & b_{n} \\
 
   <script>
   window.onscroll = function() {
-    if(document.getElementById("i_bg").height)
     const contentHeight = document.body.scrollHeight - window.innerHeight;
     const scrollPercent = contentHeight > 0 ? Math.min(100 * window.scrollY / contentHeight, 100) : 0;
     document.getElementById("i_bg").style["background-position-y"] = scrollPercent + "%";

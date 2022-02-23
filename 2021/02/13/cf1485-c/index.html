@@ -492,7 +492,6 @@
 
   <script>
   window.onscroll = function() {
-    if(document.getElementById("i_bg").height)
     const contentHeight = document.body.scrollHeight - window.innerHeight;
     const scrollPercent = contentHeight > 0 ? Math.min(100 * window.scrollY / contentHeight, 100) : 0;
     document.getElementById("i_bg").style["background-position-y"] = scrollPercent + "%";
