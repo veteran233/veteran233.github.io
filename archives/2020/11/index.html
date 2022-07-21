@@ -503,9 +503,16 @@
 
   <script>
   window.onscroll = function() {
-    const contentHeight = document.body.scrollHeight - window.innerHeight;
-    const scrollPercent = contentHeight > 0 ? Math.min(100 * window.scrollY / contentHeight, 100) : 0;
-    document.getElementById("i_bg").style["background-position-y"] = scrollPercent + "%";
+    if (window.innerHeight * 1354 < window.innerWidth * 2048)
+    {
+      const contentHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent = contentHeight > 0 ? Math.min(100 * window.scrollY / contentHeight, 100) : 0;
+      document.getElementById("i_bg").style["background-position-y"] = scrollPercent + "%";
+    }
+    else
+    {
+      document.getElementById("i_bg").style["background-position-y"] = "center";
+    }
   }
   </script>
 

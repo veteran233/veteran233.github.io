@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="veteran233QAQ的博客">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-20T11:16:31.000Z">
-<meta property="article:modified_time" content="2020-10-20T11:19:46.752Z">
+<meta property="article:modified_time" content="2022-07-21T16:29:58.438Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -445,9 +445,16 @@
 
   <script>
   window.onscroll = function() {
-    const contentHeight = document.body.scrollHeight - window.innerHeight;
-    const scrollPercent = contentHeight > 0 ? Math.min(100 * window.scrollY / contentHeight, 100) : 0;
-    document.getElementById("i_bg").style["background-position-y"] = scrollPercent + "%";
+    if (window.innerHeight * 1354 < window.innerWidth * 2048)
+    {
+      const contentHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent = contentHeight > 0 ? Math.min(100 * window.scrollY / contentHeight, 100) : 0;
+      document.getElementById("i_bg").style["background-position-y"] = scrollPercent + "%";
+    }
+    else
+    {
+      document.getElementById("i_bg").style["background-position-y"] = "center";
+    }
   }
   </script>
 
